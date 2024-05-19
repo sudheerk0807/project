@@ -3,4 +3,4 @@ def inc(x):
 
 
 def test_output():
-    assert inc(5) == 4
+    assert inc(5) == 3 
