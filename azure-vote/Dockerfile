@@ -4,4 +4,5 @@ ADD /azure-vote /app
 
 
 RUN python version
-RUN java version 
+RUN java version
+RUN pip version
