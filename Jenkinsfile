@@ -4,7 +4,7 @@ pipeline{
     stages{
         stage("Verify Branch"){
             steps{
-                echo "$GTI_BRANCH"
+                echo "$GIT_BRANCH"
             }
         }
 
