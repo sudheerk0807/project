@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3'
 services:
   azure-vote-back:
     image: mcr.microsoft.com/oss/bitnami/redis:6.0.8
@@ -15,4 +15,4 @@ services:
     environment:
       REDIS: azure-vote-back
     ports:
-        - "9000:9000"
+        - "8080:80"
