@@ -10,7 +10,7 @@ pipeline{
 
         stage("Docker Build"){
             steps{
-                sh(script: 'docker conpose build')
+                sh(script: 'docker compose build')
             }
         }
 
