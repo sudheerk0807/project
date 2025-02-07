@@ -16,7 +16,7 @@ pipeline{
 
         stage("Start App"){
             steps{
-                sh(script: 'docker compose up -d')
+                sh(script: 'docker compose up -d -p 8085:8080')
             }
         }
 
