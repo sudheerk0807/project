@@ -59,7 +59,7 @@ spec:
       - name: azure-vote-front
         image: mcr.microsoft.com/azuredocs/azure-vote-front:v1
         ports:
-        - containerPort: 80
+        - containerPort: 9000
         resources:
           requests:
             cpu: 250m
@@ -76,6 +76,6 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: 80
+  - port: 9000
   selector:
     app: azure-vote-front
