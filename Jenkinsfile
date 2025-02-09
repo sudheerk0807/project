@@ -4,25 +4,27 @@ pipeline {
     stages {
         stage("Verify Branch") {
             steps {
-                echo "$GIT_BRANCH"
+                echo "${env.GIT_BRANCH}"
             }
         }
 
         stage("Docker Build") {
             steps {
-                sh(script: 'docker compose build')
+                sh 'docker compose build'
             }
         }
 
         stage("Start App") {
             steps {
-                sh(script: 'docker compose up -d')
+                sh 'docker --version'
+                sh 'docker compose --version'
+                sh 'docker compose up -d'
             }
         }
 
         stage("Run Tests") {
             steps {
-                sh(script: "pytest ./tests/test_sample.py")
+                sh "pytest ./tests/test_sample.py"
             }
             post {
                 success {
@@ -38,7 +40,7 @@ pipeline {
     post {
         always {
             echo "Cleaning up..."
-            sh(script: 'docker compose down')
+            sh 'docker compose down'
         }
     }
 }
