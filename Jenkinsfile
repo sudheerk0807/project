@@ -24,7 +24,7 @@ pipeline {
 
         stage("Run Tests") {
             steps {
-                sh "pytest ./tests/test_sample.py"
+                sh 'pytest ./tests/test_sample.py'
             }
             post {
                 success {
